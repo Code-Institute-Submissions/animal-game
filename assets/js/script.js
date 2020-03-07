@@ -131,5 +131,22 @@ function moveCounter(){
         cardsTurned = 0;
     }
 }
+// Create a timer to count the time it takes to turn over all cards
+var minutes = 0;
+var seconds = 0;
+var time = document.getElementById("timer");
+var timer;
+
+function startTimer(){
+    timer = setInterval(function(){
+        time.innerHTML = minutes + " mins " + seconds + " secs";
+        seconds++;
+        if(seconds >= 60){
+            minutes++;
+            seconds = 0;
+        }
+    },1000);
+}
+
 
   
