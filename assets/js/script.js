@@ -93,4 +93,14 @@ function checkCards(){
     match ? cardsMatched() : noCardsMatched();
 }
 
+function cardsMatched(){
+    firstCard.removeEventListener('click',showCard); //Remove event listener for turned card
+    secondCard.removeEventListener('click',showCard); //Remove event listener for turned card
+    firstCardIndex = null; //Reset card index
+    secondCardIndex = null; //Reset card index
+    flipped = false; //reset flipped boolean
+    disabled = false; //re-enable game board
+}
+
+
   
