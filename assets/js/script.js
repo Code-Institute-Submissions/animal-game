@@ -1,3 +1,4 @@
+//Declare global variables
 const cards = [
   { family: "cow", type: "parent", src: "assets/images/cow.png" },
   { family: "cow", type: "child", src: "assets/images/calf.png" },
@@ -12,7 +13,9 @@ const cards = [
   { family: "lion", type: "parent", src: "assets/images/lion.jpg" },
   { family: "lion", type: "child", src: "assets/images/cub.jpg" }
 ];
+var deck = document.getElementById("card-deck");
 
+/* Reference: https://medium.com/@joshfoster_14132/best-javascript-shuffle-algorithm-c2c8057a3bc1 */
 function fisherYatesShuffle(array) {
   var currentIndex = array.length,
     temporaryValue,
@@ -32,3 +35,16 @@ function fisherYatesShuffle(array) {
 
   return array;
 }
+
+// self executing function to create the deck 
+(function createDeck() {
+    for(x = 0; x < cards.length; x++) {
+        var src = cards[x].src;
+        console.log(typeof src);
+        console.log("Testing " +`${src}`);
+        card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `<div class="card-inner"><div class="card-front"><img src="assets/images/card-front.jpg" alt="card front face"></div><div class="card-back"><img src="${src}" alt="card back face"></div></div>`;
+        deck.appendChild(card);
+    } 
+ })();
