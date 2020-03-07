@@ -45,6 +45,7 @@ main {
 }
 .game-panel {
   border: 1px solid #fff;
+  padding: 20px;
 }
 
 /*flex container for card-deck*/
