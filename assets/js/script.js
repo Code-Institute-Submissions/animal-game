@@ -59,6 +59,7 @@ function startGame() {
     gameCards.forEach(card => {
       card.addEventListener("click", showCard);
     });
+    startTimer();
 }
 
 let flipped = false;
