@@ -18,22 +18,22 @@
   <body>
     <header class="container-fluid">
       <div class="row">
-        <div class="col-sm-6 col-md-4 mx-auto">
+        <div class="col-sm-6 col-md-6 mx-auto">
           <h1>Animal Parent & Child Memory Game</h1>
         </div>
         <div class="col-sm-6 col-md-4 mx-auto">
-          <div class="row">
-            <div id="moves" class="col-xs-6 w-50 text-center">
-              <strong>Moves:</strong>
+          <div class="row ml-1 mr-1">
+            <div class="col-xs-6 w-50 text-center">
+              <h3 class="d-inline">Moves: </h3><span id="moves">0</span>
             </div>
-            <div id="Timer" class="col-xs-6 w-50 text-center">
-              <strong>Time:</strong>
+            <div class="col-xs-6 w-50 text-center">
+              <h3 class="d-inline">Time: </h3><span id="timer">0</span>
             </div>
           </div>
         </div>
-        <div class="col-sm-6 col-md-4 mx-auto">
-          <div id="StartGame" class="text-center">
-            <button onclick="StartGame()">Start Game</button>
+        <div class="col-sm-6 col-md-2 mx-auto">
+          <div id="cta" class="text-center">
+            <button onclick="startGame()">Start Game</button>
           </div>
         </div>
       </div>

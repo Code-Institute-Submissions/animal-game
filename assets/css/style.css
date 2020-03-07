@@ -23,6 +23,16 @@ body {
 header {
   padding: 20px;
 }
+h1{
+    font-family: "Chivo",sans-serif;;
+    font-weight: 900;
+    font-size: 2.0rem;
+}
+h3{
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+}
 /*style button */
 button {
   padding: 9px 25px;

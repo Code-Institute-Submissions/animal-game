@@ -36,15 +36,19 @@ function fisherYatesShuffle(array) {
   return array;
 }
 
-// self executing function to create the deck 
-(function createDeck() {
-    for(x = 0; x < cards.length; x++) {
-        var src = cards[x].src;
-        console.log(typeof src);
-        console.log("Testing " +`${src}`);
-        card = document.createElement("div");
-        card.className = "card";
-        card.innerHTML = `<div class="card-inner"><div class="card-front"><img src="assets/images/card-front.jpg" alt="card front face"></div><div class="card-back"><img src="${src}" alt="card back face"></div></div>`;
-        deck.appendChild(card);
-    } 
- })();
+// self executing function to create the deck
+function createDeck() {
+    deck.innerHTML = "";
+  for (x = 0; x < cards.length; x++) {
+    var src = cards[x].src;
+    console.log(typeof src);
+    console.log("Testing " + `${src}`);
+    card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `<div class="card-inner"><div class="card-front"><img src="assets/images/card-front.jpg" alt="card front face"></div><div class="card-back"><img src="${src}" alt="card back face"></div></div>`;
+    deck.appendChild(card);
+  }
+};
+
+createDeck();
+
