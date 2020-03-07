@@ -1,50 +1,92 @@
-@import url('https://fonts.googleapis.com/css?family=Chivo|Open+Sans|Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Chivo|Open+Sans|Roboto&display=swap");
 
 /*----------------Colours--------------*/
 :root {
-    --bg-purple: #584aa9;
-    --bg-green: #08c59d;
-    --txt-white: #edf0f1;
-  }
+  --bg-purple: #584aa9;
+  --bg-green: #08c59d;
+  --txt-white: #edf0f1;
+}
 
 /* Apply border-box to all elements to ensure that padding & border are included in the width & height */
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-body{
-    background-color: var(--bg-purple);
-    font-family: 'Roboto', sans-serif;
-    color: var(--txt-white);
+body {
+  background-color: var(--bg-purple);
+  font-family: "Roboto", sans-serif;
+  color: var(--txt-white);
 }
 /* header */
-header{
-    padding: 20px;
+header {
+  padding: 20px;
 }
 /*style button */
-button{
-    padding: 9px 25px;
-    background-color: rgba(8,197,157,0.8);
-    color: var(--txt-white);
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-  }
-  button:hover{
-    background-color: rgba(8,197,157,1);
-  }
-  main{
-      height: 600px;
-  }
-  .side-panel{
-    border: 1px solid #fff;
-  }
-  .game-panel{
-    border: 1px solid #fff;
-  }
+button {
+  padding: 9px 25px;
+  background-color: rgba(8, 197, 157, 0.8);
+  color: var(--txt-white);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+button:hover {
+  background-color: rgba(8, 197, 157, 1);
+}
+/*main content section*/
+main {
+  height: 600px;
+}
+.side-panel {
+  border: 1px solid #fff;
+}
+.game-panel {
+  border: 1px solid #fff;
+}
 
-
-  
+/*flex container for card-deck*/
+#card-deck {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid #fff;
+}
+.card {
+  width: calc(25% - 20px);
+  height: calc(33% - 20px);
+  margin: 10px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.show .card-inner {
+  transform: rotateY(-180deg);
+}
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+img {
+  width: 100%;
+  height: 100%;
+}
+.card-back {
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(-180deg);
+}
