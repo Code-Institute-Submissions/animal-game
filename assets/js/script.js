@@ -87,4 +87,10 @@ function showCard() {
     checkCards(); //Call function to see if the cards match
   }
 }
+
+function checkCards(){
+    let match = cards[firstCardIndex].family === cards[secondCardIndex].family;
+    match ? cardsMatched() : noCardsMatched();
+}
+
   
