@@ -70,6 +70,8 @@ function showCard() {
   if (disabled) return; //If the game board is disabled, do nothing when a user clicks on a card.
   if (this === firstCard) return; //If the user clicks on the first card again, do nothing.
 
+  moveCounter(); //Call moveCounter for each card turned
+
   this.classList.add("show");
 
   if (!flipped) {
@@ -112,6 +114,22 @@ function noCardsMatched(){
         flipped = false;
         disabled = false;  
     },1200);
+}
+
+//declare variables to track number of moves
+//Two cards turned equals one move
+var moves;
+var cardsTurned = 0;
+var totalMoves = 0;
+
+function moveCounter(){
+    cardsTurned++;
+    if(cardsTurned == 2){
+        totalMoves++;
+        moves = document.getElementById("moves");
+        moves.innerHTML = totalMoves;
+        cardsTurned = 0;
+    }
 }
 
   
