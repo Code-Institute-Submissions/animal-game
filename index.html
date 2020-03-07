@@ -6,11 +6,27 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="assets/css/style.css">
 <title>Title</title>
 </head>
 <body>
-    <header></header>
+    <header class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6 col-md-4 mx-auto">
+                <h1>Animal Parent & Child Memory Game</h1>
+            </div>
+            <div class="col-sm-6 col-md-4 mx-auto">
+                <div class="row">
+                    <div id="moves" class="col-xs-6 w-50 text-center"><strong>Moves:</strong> </div>
+                    <div id="Timer" class="col-xs-6 w-50 text-center"><strong>Time:</strong> </div>
+                </div>
+
+            </div>
+            <div class="col-sm-6 col-md-4 mx-auto">
+                <div id="StartGame" class="text-center"><button onclick="StartGame()">Start Game</button></div>
+            </div>
+        </div>
+    </header>
     <main></main>
     <footer></footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>

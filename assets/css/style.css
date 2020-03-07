@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Chivo|Open+Sans|Roboto&display=swap');
+
+/*----------------Colours--------------*/
+:root {
+    --bg-purple: #584aa9;
+    --bg-green: #08c59d;
+    --txt-white: #edf0f1;
+  }
+
+/* Apply border-box to all elements to ensure that padding & border are included in the width & height */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: var(--bg-purple);
+    font-family: 'Roboto', sans-serif;
+    color: var(--txt-white);
+}
+/* header */
+header{
+    padding: 20px;
+}
+/*style button */
+button{
+    padding: 9px 25px;
+    background-color: rgba(8,197,157,0.8);
+    color: var(--txt-white);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+  }
+  button:hover{
+    background-color: rgba(8,197,157,1);
+  }
+
+  
