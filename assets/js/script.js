@@ -102,5 +102,16 @@ function cardsMatched(){
     disabled = false; //re-enable game board
 }
 
+function noCardsMatched(){
+    disabled = true;
+    setTimeout(() =>{
+        firstCard.classList.remove('show');
+        secondCard.classList.remove('show');
+        firstCardIndex = null;
+        secondCardIndex = null;
+        flipped = false;
+        disabled = false;  
+    },1200);
+}
 
   
