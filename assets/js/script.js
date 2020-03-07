@@ -156,7 +156,6 @@ function startTimer(){
 
 function congratsModal(){
     alert("Congrats")
-};
 }
 
 
