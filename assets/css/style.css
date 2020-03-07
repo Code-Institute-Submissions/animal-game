@@ -36,5 +36,15 @@ button{
   button:hover{
     background-color: rgba(8,197,157,1);
   }
+  main{
+      height: 600px;
+  }
+  .side-panel{
+    border: 1px solid #fff;
+  }
+  .game-panel{
+    border: 1px solid #fff;
+  }
+
 
   
