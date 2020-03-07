@@ -52,3 +52,12 @@ function createDeck() {
 
 createDeck();
 
+function startGame() {
+    fisherYatesShuffle(cards);
+    createDeck();
+    var gameCards = document.querySelectorAll(".card");
+    gameCards.forEach(card => {
+      card.addEventListener("click", showCard);
+    });
+}
+  
