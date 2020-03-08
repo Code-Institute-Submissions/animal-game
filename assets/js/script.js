@@ -57,7 +57,7 @@ function startGame() {
     createDeck();
     var gameCards = document.querySelectorAll(".card");
     gameCards.forEach(card => {
-      card.addEventListener("click", showCard);
+      card.addEventListener("click", moveCounter);
     });
     startTimer();
 }
@@ -72,8 +72,8 @@ function checkCards(){
 }
 var matchCount = 0;
 function cardsMatched(){
-    firstCard.removeEventListener('click',showCard); //Remove event listener for turned card
-    secondCard.removeEventListener('click',showCard); //Remove event listener for turned card
+    firstCard.removeEventListener('click',moveCounter); //Remove event listener for turned card
+    secondCard.removeEventListener('click',moveCounter); //Remove event listener for turned card
     firstCardIndex = null; //Reset card index
     secondCardIndex = null; //Reset card index
     flipped = false; //reset flipped boolean
