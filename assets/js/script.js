@@ -139,6 +139,9 @@ function startTimer(){
     },1000);
 }
 
+// declaring variable of matchedCards to hold the number of cards with class match
+let matchedCards = document.getElementsByClassName("match");
+
 function congratsModal(){
   alert("Well Done")
 }
