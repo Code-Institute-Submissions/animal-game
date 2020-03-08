@@ -95,25 +95,30 @@ function resetTimer(){
   seconds = 0;
 }
 
-
 function checkCards(){
     let match = cards[firstCardIndex].family === cards[secondCardIndex].family;
     match ? cardsMatched() : noCardsMatched();
 }
 function cardsMatched() {
   audioSuccess.play();
-  firstCard.classList.add("match");
-  secondCard.classList.add("match");
-  firstCard.removeEventListener("click", moveCounter); //Remove event listener for turned card
-  secondCard.removeEventListener("click", moveCounter); //Remove event listener for turned card
-  resetCardHolders();
+  firstCard.classList.add("match","animated","pulse");
+  secondCard.classList.add("match","animated", "pulse");
+  setTimeout(() => {
+    firstCard.removeEventListener("click", moveCounter); //Remove event listener for turned card
+    secondCard.removeEventListener("click", moveCounter); //Remove event listener for turned card
+    firstCard.classList.add("animated","pulse");
+    secondCard.classList.add("animated", "pulse");
+    resetCardHolders();
+  },800);
 }
 
 function noCardsMatched() {
   audioError.play();
+  firstCard.classList.add("animated","wobble");
+  secondCard.classList.add("animated", "wobble");
   setTimeout(() => {
-    firstCard.classList.remove("show");
-    secondCard.classList.remove("show");
+    firstCard.classList.remove("show","animated","wobble");
+    secondCard.classList.remove("show","animated","wobble");
     resetCardHolders();
   }, 1200);
 }
