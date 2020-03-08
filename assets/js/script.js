@@ -63,6 +63,36 @@ function startGame() {
     startTimer();
 }
 
+function resetGame(){
+  resetMoves();
+  resetTimer();
+  cardsMatched = 0;
+  var gameCards = document.querySelectorAll(".card");
+  for (x = 0; x < gameCards.length; x++) {
+    if(gameCards[x].classList.contains("show")){
+        gameCards[x].classList.remove("show");
+    }
+    if(gameCards[x].classList.contains("match")){
+      gameCards[x].classList.remove("match");
+  }
+  }
+  gameCards.forEach(card => {
+      card.removeEventListener("click", moveCounter);
+    });
+  cta = document.getElementById("cta").innerHTML="<button onclick='startGame()'>Start Game</button>"; 
+}
+
+function resetMoves(){
+  totalMoves = 0;
+  moves = document.getElementById("moves");
+  moves.innerHTML = totalMoves;
+}
+function resetTimer(){
+  time.innerHTML = "0 mins 0 secs";
+  clearInterval(timer);
+}
+
+
 function checkCards(){
     let match = cards[firstCardIndex].family === cards[secondCardIndex].family;
     match ? cardsMatched() : noCardsMatched();
