@@ -101,3 +101,10 @@ img {
   color: white;
   transform: rotateY(-180deg);
 }
+/*Congrats Modal */
+.modal-background{
+  background-color: var(--bg-purple);
+}
+.modal-body{
+  font-size: 1.2rem;
+}

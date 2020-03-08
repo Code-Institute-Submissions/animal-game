@@ -79,7 +79,6 @@ function noCardsMatched() {
     firstCard.classList.remove("show");
     secondCard.classList.remove("show");
     resetCardHolders();
-
   }, 1200);
 }
 
@@ -143,15 +142,26 @@ function startTimer(){
 
 // declaring variable of matchedCards to hold the number of cards with class match
 let matchedCards = document.getElementsByClassName("match");
-
+var finalMinutes, finalSeconds;
 function checkMatchedCards(){
   if (matchedCards.length == 12){
     clearInterval(timer);
     setTimeout(() => {
-      alert("Congrats");
+      congratsModal() ;
     },1100);
   };
 }
 function congratsModal(){
-  alert("Well Done")
+  var finalMoves = document.getElementById("final-moves");
+  var finalTime = document.getElementById("final-time");
+  var finalScore = document.getElementById("final-score");
+  var totalScore = getScore();
+
+  finalMoves.innerHTML = totalMoves;
+  finalTime.innerHTML = time.innerHTML;
+  finalScore.innerHTML = totalScore;  
+  
+  $("#congrats-modal").modal("show");
 }
+
+
