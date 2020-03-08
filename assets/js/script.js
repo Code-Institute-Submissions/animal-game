@@ -66,7 +66,6 @@ function startGame() {
 function resetGame(){
   resetMoves();
   resetTimer();
-  cardsMatched = 0;
   var gameCards = document.querySelectorAll(".card");
   for (x = 0; x < gameCards.length; x++) {
     if(gameCards[x].classList.contains("show")){
@@ -90,6 +89,8 @@ function resetMoves(){
 function resetTimer(){
   time.innerHTML = "0 mins 0 secs";
   clearInterval(timer);
+  minutes = 0;
+  seconds = 0;
 }
 
 

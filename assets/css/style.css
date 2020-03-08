@@ -51,10 +51,9 @@ main {
   height: 600px;
 }
 .side-panel {
-  border: 1px solid #fff;
+  padding: 20px;
 }
 .game-panel {
-  border: 1px solid #fff;
   padding: 20px;
 }
 
@@ -65,7 +64,6 @@ main {
   margin: auto;
   display: flex;
   flex-wrap: wrap;
-  border: 1px solid #fff;
 }
 .card {
   width: calc(25% - 20px);
@@ -107,4 +105,17 @@ img {
 }
 .modal-body{
   font-size: 1.2rem;
+}
+footer{
+  position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+}
+footer a{
+  color: #fff
+}
+footer a:hover{
+  color: var(--bg-green)
 }
