@@ -76,7 +76,6 @@ function cardsMatched(){
     secondCard.removeEventListener('click',moveCounter); //Remove event listener for turned card
     firstCardIndex = null; //Reset card index
     secondCardIndex = null; //Reset card index
-    flipped = false; //reset flipped boolean
     disabled = false; //re-enable game board
     matchCount += 2;
     if (matchCount == 12){
@@ -92,7 +91,6 @@ function noCardsMatched(){
         secondCard.classList.remove('show');
         firstCardIndex = null;
         secondCardIndex = null;
-        flipped = false;
         disabled = false;  
     },1200);
 }
