@@ -15,6 +15,9 @@ const cards = [
 ];
 var deck = document.getElementById("card-deck");
 
+var audioSuccess = new Audio('./assets/sounds/match.wav')
+var audioError = new Audio('./assets/sounds/nomatch.wav')
+
 /* Reference: https://medium.com/@joshfoster_14132/best-javascript-shuffle-algorithm-c2c8057a3bc1 */
 function fisherYatesShuffle(array) {
   var currentIndex = array.length,
@@ -99,6 +102,7 @@ function checkCards(){
     match ? cardsMatched() : noCardsMatched();
 }
 function cardsMatched() {
+  audioSuccess.play();
   firstCard.classList.add("match");
   secondCard.classList.add("match");
   firstCard.removeEventListener("click", moveCounter); //Remove event listener for turned card
@@ -107,6 +111,7 @@ function cardsMatched() {
 }
 
 function noCardsMatched() {
+  audioError.play();
   setTimeout(() => {
     firstCard.classList.remove("show");
     secondCard.classList.remove("show");
