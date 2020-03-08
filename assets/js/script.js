@@ -71,23 +71,24 @@ function cardsMatched() {
   secondCard.classList.add("match");
   firstCard.removeEventListener("click", moveCounter); //Remove event listener for turned card
   secondCard.removeEventListener("click", moveCounter); //Remove event listener for turned card
-  firstCard = null;
-  firstCardIndex = null;
-  secondCard = null;
-  secondCardIndex = null;
-  disabled = false;
+  resetCardHolders();
 }
 
 function noCardsMatched() {
   setTimeout(() => {
     firstCard.classList.remove("show");
     secondCard.classList.remove("show");
-    firstCard = null;
-    firstCardIndex = null;
-    secondCard = null;
-    secondCardIndex = null;
-    disabled = false;
+    resetCardHolders();
+
   }, 1200);
+}
+
+function resetCardHolders(){
+  firstCard = null;
+  firstCardIndex = null;
+  secondCard = null;
+  secondCardIndex = null;
+  disabled = false;
 }
 
 //declare variables to track number of moves
@@ -120,6 +121,7 @@ function moveCounter() {
     disabled = true; //Disable the game board once two cards have been turned
     cardsTurned = 0;
     checkCards();
+    checkMatchedCards();
   }
 }
 // Create a timer to count the time it takes to turn over all cards
@@ -142,6 +144,14 @@ function startTimer(){
 // declaring variable of matchedCards to hold the number of cards with class match
 let matchedCards = document.getElementsByClassName("match");
 
+function checkMatchedCards(){
+  if (matchedCards.length == 12){
+    clearInterval(timer);
+    setTimeout(() => {
+      alert("Congrats");
+    },1100);
+  };
+}
 function congratsModal(){
   alert("Well Done")
 }
