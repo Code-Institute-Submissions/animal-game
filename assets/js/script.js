@@ -66,18 +66,12 @@ function checkCards(){
     let match = cards[firstCardIndex].family === cards[secondCardIndex].family;
     match ? cardsMatched() : noCardsMatched();
 }
-var matchCount = 0;
 function cardsMatched(){
     firstCard.removeEventListener('click',moveCounter); //Remove event listener for turned card
     secondCard.removeEventListener('click',moveCounter); //Remove event listener for turned card
     firstCardIndex = null; //Reset card index
     secondCardIndex = null; //Reset card index
     disabled = false; //re-enable game board
-    matchCount += 2;
-    if (matchCount == 12){
-        clearInterval(timer);
-        setTimeout(congratsModal(),5000)
-    };
 }
 
 function noCardsMatched(){
@@ -141,4 +135,5 @@ function startTimer(){
 }
 
 function congratsModal(){
+  alert("Well Done")
 }
