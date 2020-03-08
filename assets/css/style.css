@@ -18,10 +18,15 @@ body {
   background-color: var(--bg-purple);
   font-family: "Roboto", sans-serif;
   color: var(--txt-white);
+  height: 100vh;
 }
 /* header */
 header {
+  z-index: 10;
+  border-bottom: 1px solid var(--txt-white);
+  background-color: var(--bg-purple);
   padding: 20px;
+  position: relative;
 }
 h1{
     font-family: "Chivo",sans-serif;;
@@ -49,11 +54,13 @@ button:hover {
 /*main content section*/
 main {
   height: 600px;
+  z-index: 5;
 }
 .side-panel {
   padding: 20px;
 }
 .game-panel {
+  height: 600px;
   padding: 20px;
 }
 
@@ -107,8 +114,6 @@ img {
   font-size: 1.2rem;
 }
 footer{
-  position: absolute;
-    bottom: 0;
     width: 100%;
     height: 60px;
     line-height: 60px;
@@ -118,4 +123,19 @@ footer a{
 }
 footer a:hover{
   color: var(--bg-green)
+}
+
+@media only screen and (max-width: 450px) {
+  /* For mobile phones: */
+  main{
+    position: relative;   
+  }
+  footer{
+    position: relative;
+    top: 400px;
+  }
+  .card {
+    width: calc(33% - 20px);
+    height: calc(25% - 20px);
+  }
 }
