@@ -66,12 +66,16 @@ function checkCards(){
     let match = cards[firstCardIndex].family === cards[secondCardIndex].family;
     match ? cardsMatched() : noCardsMatched();
 }
-function cardsMatched(){
-    firstCard.removeEventListener('click',moveCounter); //Remove event listener for turned card
-    secondCard.removeEventListener('click',moveCounter); //Remove event listener for turned card
-    firstCardIndex = null; //Reset card index
-    secondCardIndex = null; //Reset card index
-    disabled = false; //re-enable game board
+function cardsMatched() {
+  firstCard.classList.add("match");
+  secondCard.classList.add("match");
+  firstCard.removeEventListener("click", moveCounter); //Remove event listener for turned card
+  secondCard.removeEventListener("click", moveCounter); //Remove event listener for turned card
+  firstCard = null;
+  firstCardIndex = null;
+  secondCard = null;
+  secondCardIndex = null;
+  disabled = false;
 }
 
 function noCardsMatched(){
