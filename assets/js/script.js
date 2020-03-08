@@ -62,7 +62,6 @@ function startGame() {
     startTimer();
 }
 
-let flipped = false;
 let firstCard, secondCard;
 let disabled = false;
 let firstCardIndex,secondCardIndex;
