@@ -67,30 +67,6 @@ let firstCard, secondCard;
 let disabled = false;
 let firstCardIndex,secondCardIndex;
 
-function showCard() {
-  if (disabled) return; //If the game board is disabled, do nothing when a user clicks on a card.
-  if (this === firstCard) return; //If the user clicks on the first card again, do nothing.
-
-  moveCounter(); //Call moveCounter for each card turned
-
-  this.classList.add("show");
-
-  if (!flipped) {
-    flipped = true;
-    firstCard = this;
-    firstCardIndex = Array.prototype.indexOf.call(
-      this.parentNode.children,
-      this
-    );
-    return;
-  } else {
-    secondCard = this;
-    secondCardIndex = Array.prototype.indexOf.call(this.parentNode.children,this);
-    disabled = true; //Disable the game board once two cards have been turned
-    checkCards(); //Call function to see if the cards match
-  }
-}
-
 function checkCards(){
     let match = cards[firstCardIndex].family === cards[secondCardIndex].family;
     match ? cardsMatched() : noCardsMatched();
@@ -157,6 +133,3 @@ function startTimer(){
 function congratsModal(){
     alert("Congrats")
 }
-
-
-  
