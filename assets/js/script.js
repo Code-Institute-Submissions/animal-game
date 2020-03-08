@@ -78,15 +78,16 @@ function cardsMatched() {
   disabled = false;
 }
 
-function noCardsMatched(){
-    disabled = true;
-    setTimeout(() =>{
-        firstCard.classList.remove('show');
-        secondCard.classList.remove('show');
-        firstCardIndex = null;
-        secondCardIndex = null;
-        disabled = false;  
-    },1200);
+function noCardsMatched() {
+  setTimeout(() => {
+    firstCard.classList.remove("show");
+    secondCard.classList.remove("show");
+    firstCard = null;
+    firstCardIndex = null;
+    secondCard = null;
+    secondCardIndex = null;
+    disabled = false;
+  }, 1200);
 }
 
 //declare variables to track number of moves
