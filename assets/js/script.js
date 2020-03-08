@@ -62,10 +62,6 @@ function startGame() {
     startTimer();
 }
 
-let firstCard, secondCard;
-let disabled = false;
-let firstCardIndex,secondCardIndex;
-
 function checkCards(){
     let match = cards[firstCardIndex].family === cards[secondCardIndex].family;
     match ? cardsMatched() : noCardsMatched();
@@ -100,15 +96,32 @@ function noCardsMatched(){
 var moves;
 var cardsTurned = 0;
 var totalMoves = 0;
+let firstCard, secondCard;
+let disabled = false;
+let firstCardIndex,secondCardIndex;
 
-function moveCounter(){
-    cardsTurned++;
-    if(cardsTurned == 2){
-        totalMoves++;
-        moves = document.getElementById("moves");
-        moves.innerHTML = totalMoves;
-        cardsTurned = 0;
-    }
+function moveCounter() {
+  if (disabled) return; //If the game board is disabled, do nothing when a user clicks on a card.
+  if (this === firstCard) return; //If the user clicks on the first card again, do nothing.
+  cardsTurned++;
+
+  if (cardsTurned == 1){
+    this.classList.add("show");
+    firstCard = this;
+    firstCardIndex = Array.prototype.indexOf.call(this.parentNode.children,this);
+    return;
+  }
+  else if (cardsTurned == 2) {
+    totalMoves++;
+    moves = document.getElementById("moves");
+    moves.innerHTML = totalMoves;
+    this.classList.add("show");
+    secondCard = this;
+    secondCardIndex = Array.prototype.indexOf.call(this.parentNode.children,this);
+    disabled = true; //Disable the game board once two cards have been turned
+    cardsTurned = 0;
+    checkCards();
+  }
 }
 // Create a timer to count the time it takes to turn over all cards
 var minutes = 0;
@@ -128,5 +141,4 @@ function startTimer(){
 }
 
 function congratsModal(){
-    alert("Congrats")
 }
