@@ -59,6 +59,7 @@ function startGame() {
     gameCards.forEach(card => {
       card.addEventListener("click", moveCounter);
     });
+    cta = document.getElementById("cta").innerHTML="<button onclick='resetGame()'>Reset Game</button>";
     startTimer();
 }
 
@@ -162,6 +163,29 @@ function congratsModal(){
   finalScore.innerHTML = totalScore;  
   
   $("#congrats-modal").modal("show");
+}
+
+function getScore(){
+  var score = 0;
+  if(totalMoves <= 8){
+    score += 20;  
+  }
+  else if(totalMoves <= 12){
+    score += 10;
+  }
+  else if(totalMoves <= 16){
+    score += 5;
+  }
+  if(minutes < 1 && seconds <= 20){
+    score += 15;
+  }
+  else if(minutes < 1 && seconds <= 40){
+    score += 10;
+  }
+  else if(minutes < 1){
+    score += 5;
+  }
+  return score;
 }
 
 
