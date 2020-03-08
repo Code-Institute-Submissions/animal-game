@@ -15,8 +15,9 @@ const cards = [
 ];
 var deck = document.getElementById("card-deck");
 
-var audioSuccess = new Audio('./assets/sounds/match.wav')
-var audioError = new Audio('./assets/sounds/nomatch.wav')
+var audioSuccess = new Audio('./assets/sounds/match.wav');
+var audioError = new Audio('./assets/sounds/nomatch.wav');
+var gameWon = new Audio('./assets/sounds/trumpets.mp3');
 
 /* Reference: https://medium.com/@joshfoster_14132/best-javascript-shuffle-algorithm-c2c8057a3bc1 */
 function fisherYatesShuffle(array) {
@@ -189,6 +190,7 @@ function checkMatchedCards(){
   };
 }
 function congratsModal(){
+  gameWon.play();
   var finalMoves = document.getElementById("final-moves");
   var finalTime = document.getElementById("final-time");
   var finalScore = document.getElementById("final-score");
