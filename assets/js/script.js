@@ -122,7 +122,8 @@ function noCardsMatched() {
     resetCardHolders();
   }, 1200);
 }
-
+// https://marina-ferreira.github.io/tutorials/js/memory-game/
+// The idea of moving the same code in two functions into it's own single function 
 function resetCardHolders(){
   firstCard = null;
   firstCardIndex = null;
@@ -141,6 +142,9 @@ let disabled = false;
 let firstCardIndex,secondCardIndex;
 
 function moveCounter() {
+  //https://marina-ferreira.github.io/tutorials/js/memory-game/
+  //The idea of locking the board and returning after the firstcard is taken from the above source.
+
   if (disabled) return; //If the game board is disabled, do nothing when a user clicks on a card.
   if (this === firstCard) return; //If the user clicks on the first card again, do nothing.
   cardsTurned++;
