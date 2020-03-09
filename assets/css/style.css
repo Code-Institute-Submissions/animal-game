@@ -41,6 +41,8 @@ h3 {
 }
 /*style button */
 .button {
+  display: inline-block;
+  min-width: 140px;
   padding: 9px 25px;
   background-color: rgba(8, 197, 157, 0.8);
   color: var(--txt-white);
@@ -153,5 +155,16 @@ footer a:hover {
   .card {
     width: calc(33% - 20px);
     height: calc(25% - 20px);
+  }
+}
+@media only screen and (min-width: 451px) and (max-width: 780px) {
+  main{
+    height: 930px;
+  }
+}
+
+@media only screen and (min-width: 781px) {
+  main{
+    height: 630px;
   }
 }
