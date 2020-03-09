@@ -59,10 +59,11 @@ ___
 - **HTML** - Used as markup for the website
 - **CSS** - Used to add style to the page and position elements
 - **Javascript** - Used to create different functions for use in the game.
-- **jQuery** - Used in conjunction with Bootstrap V4 Framework and for Congrats Modal
+
 
 ### Libraries
 - **Bootstrap** - Used throughout the site for responsive design
+- **jQuery** - Used in conjunction with Bootstrap V4 Framework and for Congrats Modal
 - **Font Awesome** - Used for Github icon in footer
 - **Animate.css** - Used to add animation to cardsMatched and noCardsMatched functions
                 Download via https://daneden.github.io/animate.css/
@@ -73,4 +74,61 @@ ___
 - **Git** - Used for version control throughout the project
 - **MS Paint** - Used for modifying images for cards and wireframes
 - **MS Visio** -  Used to create wireframes
-- - **Autoprefixer** - Used to add vendor prefixes to style.css
+- **Autoprefixer** - Used to add vendor prefixes to style.css
+
+___
+
+## Testing
+
+### Chrome DevTools
+**Chrome Devtools** was used to simulate how the website displayed on different devices with emphasis on Large Laptop (17.3") & Mobile screen sizes. It was also used as the main debugging tool when content was displayed incorrectly.
+
+The console within Chrome Devtools was invaluable and used throughout to resolve issues when writing the different functions.
+
+```javascript
+console.log(cards); //Output cards Object to console.
+fisherYatesShuffle(cards); //Shuffle cards Array.
+console.log(cards); //Check that cards Array is in a different order.
+```
+The above was the sequence of testing used to ensure that the cards Array had changed after shuffle.
+
+The console also helped identify syntax errors in the Javascript source file such as Unexpected Identifier caused by the below use of "" around the href. Replacing this with '' resolved the issue. 
+
+```javascript
+let cta = document.getElementById("cta").innerHTML="<a href="#game"><button onclick='startGame()'>Start Game</button></a>"; 
+//Changed to;
+let cta = document.getElementById("cta").innerHTML="<a href='#game'><button onclick='startGame()'>Start Game</button></a>";
+```
+The below was added to listen for when the player clicks a card. 
+
+```javascript
+    let gameCards = document.querySelectorAll(".card");
+    gameCards.forEach(card => {
+      card.addEventListener("click", moveCounter);
+    });
+```
+
+Initially, it was possible to click more than two cards so the following code needed to be added to ensure that the cards turned as expected.
+
+When the player clicks a card, that card object is passed to the moveCounter function. The following if statement is required to ensure that no action is taken if same card is selected again.
+
+```javascript
+if (this === firstCard) return;
+```
+Once the player has selected two different cards, the game board needs to be disabled to stop any additional cards being turned until we have checked for a match. This is acheived via boolean disabled.
+
+```javascript
+disabled = true; //Disable the game board once two cards have been turned
+```
+
+The following statement is then added to the beginning of the moveCounter function;
+```javascript
+if (disabled) return; //If the game board is disabled, do nothing when a user clicks on a card.
+```
+
+Testing the congrats modal found that the modal was displayed before the last card was turned. This was resolved by adding the encapsulating the call within setTimeout as shown below; 
+```javascript
+    setTimeout(() => {
+      congratsModal() ;
+    },1100);
+```
