@@ -12,7 +12,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+    />
     <link rel="stylesheet" href="assets/css/style.css" />
     <title>Animal Parent & Child Memory Game</title>
   </head>
@@ -25,10 +28,12 @@
         <div id="score" class="col-sm-6 col-md-4 mx-auto score-panel">
           <div class="row ml-1 mr-1 py-2">
             <div class="col-xs-6 w-50 text-center">
-              <h3 class="d-inline">Moves: </h3><span id="moves">0</span>
+              <h3 class="d-inline">Moves:</h3>
+              <span id="moves">0</span>
             </div>
             <div class="col-xs-6 w-50 text-center">
-              <h3 class="d-inline">Time: </h3><span id="timer">0</span>
+              <h3 class="d-inline">Time:</h3>
+              <span id="timer">0</span>
             </div>
           </div>
         </div>
@@ -43,12 +48,21 @@
       <div class="row h-100">
         <div class="col-md-3 py-3 side-panel">
           <h3>How to Play?</h3>
-          <p>The object of the game is to match the Parent Animal with the Baby Animal
-            with the least amount of moves and as quick as possible. </p>
-          <p>The player needs to select two cards, first followed by a second. If the animals are part 
-            of the same family, they will remain turned.</p>
-          <p>When the player turns over two cards, the number of moves increases.</p>
-          <p>You will receive a score depending on the number of moves and time taken to complete.</p>
+          <p>
+            The object of the game is to match the Parent Animal with the Baby
+            Animal with the least amount of moves and as quick as possible.
+          </p>
+          <p>
+            The player needs to select two cards, first followed by a second. If
+            the animals are part of the same family, they will remain turned.
+          </p>
+          <p>
+            When the player turns over two cards, the number of moves increases.
+          </p>
+          <p>
+            You will receive a score depending on the number of moves and time
+            taken to complete.
+          </p>
         </div>
         <div id="game" class="col-md-9 game-panel">
           <div id="card-deck"></div>
@@ -58,41 +72,64 @@
     <footer class="container-fluid">
       <div class="row">
         <div class="col">
-          <p><a href="https://github.com/LawlessXD/animal-game"><i class="fab fa-github pr-2"></i></a>
-          Created by David Lawless for Code Institute - Milestone 2 Project</p>
+          <p>
+            <a href="https://github.com/LawlessXD/animal-game"
+              ><i class="fab fa-github pr-2"></i
+            ></a>
+            Created by David Lawless for Code Institute - Milestone 2 Project
+          </p>
         </div>
       </div>
     </footer>
 
-<!-- Congrats Modal -->
-<div class="modal fade" id="congrats-modal" tabindex="-1" role="dialog" aria-labelledby="congratsModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content modal-background">
-      <div class="modal-header d-block">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>      
-        </button>
-        <h3 class="modal-title text-center" id="congratsModalLabel">Congratulations!</h3>
-      </div>
-      <div class="modal-body">
-        <div class="text-center py-2">
-          <img src="assets/images/trophy.jpg" style="width: 200px; height: 200px;" alt="trophy">
+    <!-- Congrats Modal -->
+    <div
+      class="modal fade"
+      id="congrats-modal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="congratsModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content modal-background">
+          <div class="modal-header d-block">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h3 class="modal-title text-center" id="congratsModalLabel">
+              Congratulations!
+            </h3>
+          </div>
+          <div class="modal-body">
+            <div class="text-center py-2">
+              <img
+                src="assets/images/trophy.jpg"
+                style="width: 200px; height: 200px;"
+                alt="trophy"
+              />
+            </div>
+            <div class="text-center py-2">
+              <p>
+                You have completed the game in a time of
+                <span id="final-time"></span> taking you
+                <span id="final-moves">X</span> moves!
+              </p>
+              <p>Your score is <span id="final-score"></span></p>
+            </div>
+          </div>
+          <div class="modal-footer d-block text-center">
+            <button type="button" data-dismiss="modal">Play Again</button>
+          </div>
         </div>
-        <div class="text-center py-2">
-          <p>You have completed the game in a time of <span id="final-time"></span> taking you 
-            <span id="final-moves">X</span> moves! </p>
-          <p>Your score is <span id="final-score"></span></p>
-        </div>
-
-
-      </div>
-      <div class="modal-footer d-block text-center">
-        <button type="button" data-dismiss="modal">Play Again</button>
       </div>
     </div>
-  </div>
-</div>
-<!--End of modal-->
+    <!--End of modal-->
     <script src="assets/js/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>

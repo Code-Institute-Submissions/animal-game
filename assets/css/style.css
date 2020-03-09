@@ -10,7 +10,7 @@
 /* Apply border-box to all elements to ensure that padding & border are included in the width & height */
 * {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
@@ -29,15 +29,15 @@ header {
   padding: 20px;
   position: relative;
 }
-h1{
-    font-family: "Chivo",sans-serif;;
-    font-weight: 900;
-    font-size: 2.0rem;
+h1 {
+  font-family: "Chivo", sans-serif;
+  font-weight: 900;
+  font-size: 2rem;
 }
-h3{
-    font-family: "Roboto", sans-serif;
-    font-weight: 700;
-    font-size: 1.4rem;
+h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
 }
 /*style button */
 .button {
@@ -78,14 +78,14 @@ main {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 .card {
   width: calc(25% - 20px);
   height: calc(33% - 20px);
   margin: 10px;
   -webkit-perspective: 1000px;
-          perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
 .card-inner {
   position: relative;
@@ -98,11 +98,11 @@ main {
   transition: transform 0.8s;
   transition: transform 0.8s, -webkit-transform 0.8s;
   -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
 .show .card-inner {
   -webkit-transform: rotateY(-180deg);
-          transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
 }
 .card-front,
 .card-back {
@@ -120,33 +120,33 @@ img {
   background-color: dodgerblue;
   color: white;
   -webkit-transform: rotateY(-180deg);
-          transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
 }
 /*Congrats Modal */
-.modal-background{
+.modal-background {
   background-color: var(--bg-purple);
 }
-.modal-body{
+.modal-body {
   font-size: 1.2rem;
 }
-footer{
-    width: 100%;
-    height: 60px;
-    line-height: 60px;
+footer {
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
 }
-footer a{
-  color: #fff
+footer a {
+  color: #fff;
 }
-footer a:hover{
-  color: var(--bg-green)
+footer a:hover {
+  color: var(--bg-green);
 }
 
 @media only screen and (max-width: 450px) {
   /* For mobile phones: */
-  main{
-    position: relative;   
+  main {
+    position: relative;
   }
-  footer{
+  footer {
     position: relative;
     top: 400px;
   }
