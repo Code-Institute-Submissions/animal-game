@@ -197,7 +197,7 @@ https://www.w3schools.com/howto/howto_css_flip_card.asp
 The idea for disabling the board and returning after the firstcard is clicked
 https://marina-ferreira.github.io/tutorials/js/memory-game/ 
 
-The FisherYates shuffling algorithm was sourced from the below URL are reused
+The FisherYates shuffling algorithm sourced from the below URL was used to shuffle the cards array
 https://medium.com/@joshfoster_14132/best-javascript-shuffle-algorithm-c2c8057a3bc1
 
 ### Images
