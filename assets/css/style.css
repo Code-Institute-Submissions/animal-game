@@ -9,7 +9,8 @@
 
 /* Apply border-box to all elements to ensure that padding & border are included in the width & height */
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
@@ -46,6 +47,8 @@ button {
   border: none;
   border-radius: 50px;
   cursor: pointer;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
 button:hover {
@@ -69,25 +72,35 @@ main {
   width: 100%;
   height: 100%;
   margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 .card {
   width: calc(25% - 20px);
   height: calc(33% - 20px);
   margin: 10px;
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  -webkit-perspective: 1000px;
+          perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
 .card-inner {
   position: relative;
   width: 100%;
   height: 100%;
   text-align: center;
+  -webkit-transition: -webkit-transform 0.8s;
+  transition: -webkit-transform 0.8s;
+  -o-transition: transform 0.8s;
   transition: transform 0.8s;
-  transform-style: preserve-3d;
+  transition: transform 0.8s, -webkit-transform 0.8s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
 }
 .show .card-inner {
-  transform: rotateY(-180deg);
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
 }
 .card-front,
 .card-back {
@@ -104,7 +117,8 @@ img {
 .card-back {
   background-color: dodgerblue;
   color: white;
-  transform: rotateY(-180deg);
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
 }
 /*Congrats Modal */
 .modal-background{

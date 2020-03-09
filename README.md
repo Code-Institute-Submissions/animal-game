@@ -53,3 +53,24 @@ Sound effects are played when the player matches two animals and when the layer 
 - An option to store the players score
 - Create a leaderboard for all players with their respective moves, time, and score.
 ___
+## Technologies Used
+
+### Languages
+- **HTML** - Used as markup for the website
+- **CSS** - Used to add style to the page and position elements
+- **Javascript** - Used to create different functions for use in the game.
+- **jQuery** - Used in conjunction with Bootstrap V4 Framework and for Congrats Modal
+
+### Libraries
+- **Bootstrap** - Used throughout the site for responsive design
+- **Font Awesome** - Used for Github icon in footer
+- **Animate.css** - Used to add animation to cardsMatched and noCardsMatched functions
+                Download via https://daneden.github.io/animate.css/
+- **Google Fonts** - imported into CSS
+
+### Tools
+- **VSCode** - Used as IDE for project
+- **Git** - Used for version control throughout the project
+- **MS Paint** - Used for modifying images for cards and wireframes
+- **MS Visio** -  Used to create wireframes
+- - **Autoprefixer** - Used to add vendor prefixes to style.css
