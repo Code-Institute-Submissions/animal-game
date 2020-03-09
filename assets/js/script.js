@@ -61,7 +61,7 @@ function startGame() {
     gameCards.forEach(card => {
       card.addEventListener("click", moveCounter);
     });
-    cta = document.getElementById("cta").innerHTML="<button onclick='resetGame()'>Reset Game</button>";
+    cta = document.getElementById("cta").innerHTML="<a href='#header'><button onclick='resetGame()'>Reset Game</button></a>";
     startTimer();
 }
 
@@ -80,7 +80,7 @@ function resetGame(){
   gameCards.forEach(card => {
       card.removeEventListener("click", moveCounter);
     });
-  cta = document.getElementById("cta").innerHTML="<button onclick='startGame()'>Start Game</button>"; 
+  cta = document.getElementById("cta").innerHTML="<a href='#game'><button onclick='startGame()'>Start Game</button></a>"; 
 }
 
 function resetMoves(){
