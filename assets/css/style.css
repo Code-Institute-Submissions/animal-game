@@ -40,7 +40,7 @@ h3{
     font-size: 1.4rem;
 }
 /*style button */
-button {
+.button {
   padding: 9px 25px;
   background-color: rgba(8, 197, 157, 0.8);
   color: var(--txt-white);
@@ -51,8 +51,10 @@ button {
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
-button:hover {
+.button:hover {
   background-color: rgba(8, 197, 157, 1);
+  text-decoration: none;
+  color: var(--txt-white);
 }
 /*main content section*/
 main {

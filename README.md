@@ -132,3 +132,11 @@ Testing the congrats modal found that the modal was displayed before the last ca
       congratsModal() ;
     },1100);
 ```
+
+### Manual Testing
+The game journey was tested manually by watching each the result of actions taken when playing the game i.e. that move only increased when two cards were turned.
+
+The resetGame function was tested manually to ensure that the moves and timer were reset accordingly.
+
+The following online validation tools were also used to validate HTML, CSS, and Javascript.
+
