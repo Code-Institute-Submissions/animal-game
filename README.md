@@ -8,10 +8,10 @@ The purpose of this project is to create an interactive front-end website that r
 
 I decided to create a memory game where the player would have to match two animals, a parent and a child by turning over two cards. 
 
-For example
+For example:
 
-![Parent](https://github.com/LawlessXD/animal-game/blob/master/assets/images/cow.png "Cow")
-![Child](https://github.com/LawlessXD/animal-game/blob/master/assets/images/calf.png "Calf")
+![Parent](https://github.com/LawlessXD/animal-game/blob/master/assets/images/cow.png "Cow"){: width=150 height=100}
+![Child](https://github.com/LawlessXD/animal-game/blob/master/assets/images/calf.png "Calf"){: width=150 height=100}
 
 ***
 
