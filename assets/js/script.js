@@ -80,7 +80,7 @@ function resetGame(){
   gameCards.forEach(card => {
       card.removeEventListener("click", moveCounter);
     });
-  let cta = document.getElementById("cta").innerHTML="<a href="#game"><button onclick='startGame()'>Start Game</button></a>"; 
+  let cta = document.getElementById("cta").innerHTML="<a href='#game'><button onclick='startGame()'>Start Game</button></a>"; 
 }
 
 function resetMoves(){
