@@ -13,15 +13,15 @@ const cards = [
   { family: "lion", type: "parent", src: "assets/images/lion.jpg" },
   { family: "lion", type: "child", src: "assets/images/cub.jpg" }
 ];
-var deck = document.getElementById("card-deck");
+let deck = document.getElementById("card-deck");
 
-var audioSuccess = new Audio('./assets/sounds/match.wav');
-var audioError = new Audio('./assets/sounds/nomatch.wav');
-var gameWon = new Audio('./assets/sounds/trumpets.mp3');
+const audioSuccess = new Audio('./assets/sounds/match.wav');
+const audioError = new Audio('./assets/sounds/nomatch.wav');
+const gameWon = new Audio('./assets/sounds/trumpets.mp3');
 
 /* Reference: https://medium.com/@joshfoster_14132/best-javascript-shuffle-algorithm-c2c8057a3bc1 */
 function fisherYatesShuffle(array) {
-  var currentIndex = array.length,
+  let currentIndex = array.length,
     temporaryValue,
     randomIndex;
 
@@ -44,7 +44,7 @@ function fisherYatesShuffle(array) {
 function createDeck() {
     deck.innerHTML = "";
   for (x = 0; x < cards.length; x++) {
-    var src = cards[x].src;
+    let src = cards[x].src;
     card = document.createElement("div");
     card.className = "card";
     card.innerHTML = `<div class="card-inner"><div class="card-front"><img src="assets/images/card-front.jpg" alt="card front face"></div><div class="card-back"><img src="${src}" alt="card back face"></div></div>`;
@@ -57,18 +57,18 @@ createDeck();
 function startGame() {
     fisherYatesShuffle(cards);
     createDeck();
-    var gameCards = document.querySelectorAll(".card");
+    let gameCards = document.querySelectorAll(".card");
     gameCards.forEach(card => {
       card.addEventListener("click", moveCounter);
     });
-    cta = document.getElementById("cta").innerHTML="<a href='#header'><button onclick='resetGame()'>Reset Game</button></a>";
+    let cta = document.getElementById("cta").innerHTML="<a href='#header'><button onclick='resetGame()'>Reset Game</button></a>";
     startTimer();
 }
 
 function resetGame(){
   resetMoves();
   resetTimer();
-  var gameCards = document.querySelectorAll(".card");
+  let gameCards = document.querySelectorAll(".card");
   for (x = 0; x < gameCards.length; x++) {
     if(gameCards[x].classList.contains("show")){
         gameCards[x].classList.remove("show");
@@ -80,7 +80,7 @@ function resetGame(){
   gameCards.forEach(card => {
       card.removeEventListener("click", moveCounter);
     });
-  cta = document.getElementById("cta").innerHTML="<a href='#game'><button onclick='startGame()'>Start Game</button></a>"; 
+  let cta = document.getElementById("cta").innerHTML="<a href='#game'><button onclick='startGame()'>Start Game</button></a>"; 
 }
 
 function resetMoves(){
@@ -133,9 +133,9 @@ function resetCardHolders(){
 
 //declare variables to track number of moves
 //Two cards turned equals one move
-var moves;
-var cardsTurned = 0;
-var totalMoves = 0;
+let moves;
+let cardsTurned = 0;
+let totalMoves = 0;
 let firstCard, secondCard;
 let disabled = false;
 let firstCardIndex,secondCardIndex;
@@ -165,10 +165,10 @@ function moveCounter() {
   }
 }
 // Create a timer to count the time it takes to turn over all cards
-var minutes = 0;
-var seconds = 0;
-var time = document.getElementById("timer");
-var timer;
+let minutes = 0;
+let seconds = 0;
+let time = document.getElementById("timer");
+let timer;
 
 function startTimer(){
     timer = setInterval(function(){
@@ -183,7 +183,7 @@ function startTimer(){
 
 // declaring variable of matchedCards to hold the number of cards with class match
 let matchedCards = document.getElementsByClassName("match");
-var finalMinutes, finalSeconds;
+let finalMinutes, finalSeconds;
 function checkMatchedCards(){
   if (matchedCards.length == 12){
     clearInterval(timer);
@@ -194,10 +194,10 @@ function checkMatchedCards(){
 }
 function congratsModal(){
   gameWon.play();
-  var finalMoves = document.getElementById("final-moves");
-  var finalTime = document.getElementById("final-time");
-  var finalScore = document.getElementById("final-score");
-  var totalScore = getScore();
+  let finalMoves = document.getElementById("final-moves");
+  let finalTime = document.getElementById("final-time");
+  let finalScore = document.getElementById("final-score");
+  let totalScore = getScore();
 
   finalMoves.innerHTML = totalMoves;
   finalTime.innerHTML = time.innerHTML;
@@ -207,7 +207,7 @@ function congratsModal(){
 }
 
 function getScore(){
-  var score = 0;
+  let score = 0;
   if(totalMoves <= 8){
     score += 20;  
   }
@@ -228,5 +228,3 @@ function getScore(){
   }
   return score;
 }
-
-
